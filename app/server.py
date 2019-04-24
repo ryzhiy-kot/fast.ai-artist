@@ -8,7 +8,7 @@ from io import BytesIO
 from fastai import *
 from fastai.vision import *
 
-model_file_url = 'https://www.dropbox.com/s/y4kl2gv1akv7y4i/stage-2.pth?raw=1'
+model_file_url = 'https://drive.google.com/file/d/1srvQJySKSqnbQCaND4XX4fhbai9wz85v/view?usp=sharing'
 model_file_name = 'model'
 classes = ['picasso', 'monet', 'manet']
 path = Path(__file__).parent
