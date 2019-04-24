@@ -8,9 +8,9 @@ from io import BytesIO
 from fastai import *
 from fastai.vision import *
 
-model_file_url = 'https://drive.google.com/file/d/1srvQJySKSqnbQCaND4XX4fhbai9wz85v/view?usp=sharing'
+model_file_url = 'https://drive.google.com/uc?export=download&confirm=ORnk&id=1srvQJySKSqnbQCaND4XX4fhbai9wz85v'
 model_file_name = 'model'
-classes = ['picasso', 'monet', 'manet']
+classes = ['Picasso', 'Monet', 'Manet']
 path = Path(__file__).parent
 
 app = Starlette()
