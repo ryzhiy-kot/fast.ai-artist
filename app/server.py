@@ -8,9 +8,8 @@ from io import BytesIO
 from fastai import *
 from fastai.vision import *
 
-model_file_url = 'https://drive.google.com/uc?export=download&confirm=ORnk&id=1srvQJySKSqnbQCaND4XX4fhbai9wz85v'
-model_file_name = 'model.pth'
-classes = ['Picasso', 'Monet', 'Manet']
+model_file_url = 'https://drive.google.com/uc?authuser=0&id=1FoHE5zpU9KrRmOO7EjfAyMSzNxtLFyPm&export=download'
+model_file_name = 'export.pkl'
 path = Path(__file__).parent
 
 app = Starlette()
@@ -52,8 +51,7 @@ async def analyze(request):
     data = await request.form()
     img_bytes = await (data['file'].read())
     img = open_image(BytesIO(img_bytes))
-    return JSONResponse({'result': learn.predict(img)[0]})
+    return JSONResponse({'result': str(learn.predict(img)[0])})
 
 if __name__ == '__main__':
-    if 'serve' in sys.argv: uvicorn.run(app, host='0.0.0.0', port=8080)
-
+    if 'serve' in sys.argv: uvicorn.run(app, host='localhost', port=8001)
